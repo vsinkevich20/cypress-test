@@ -31,4 +31,15 @@ describe('First  suite', () => {
     cy.get('button').contains('Right').trigger('mouseenter');
     cy.get('nb-popover').should('be.visible').contains('Hello, how are you today?');
   })
+
+  it("Verify Dialog",() =>{
+    cy.get('nb-icon.menu-icon.ng-tns-c7-7').click();
+    cy.get('a.ng-tns-c7-8[title="Dialog"]').click();
+    cy.get('button:contains("Enter Name")').click();
+    cy.get('input[placeholder="Name').type('Valeriia');
+    cy.get('button.status-success[ng-reflect-status="success"]').click();
+    cy.get('li.ng-star-inserted').should('be.visible').and('contain', 'Valeriia');
+
+
+  })
 })
