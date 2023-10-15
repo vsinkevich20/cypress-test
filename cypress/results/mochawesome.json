@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-15T21:27:51.664Z",
+    "end": "2023-10-15T21:28:08.014Z",
+    "duration": 16350,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ba981f33-578c-4e5f-88bd-b58c4d48c521",
+      "title": "",
+      "fullFile": "cypress/e2e/allTestsinOne.spec.js",
+      "file": "cypress/e2e/allTestsinOne.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "967dc0e9-3336-4e36-ac24-0deafbf070dd",
+          "title": "Second  Ui suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "LogIn Validation Messages",
+              "fullTitle": "Second  Ui suite LogIn Validation Messages",
+              "timedOut": null,
+              "duration": 2333,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = new _LoginPage.LoginPage();\nlogin.visitLoginPage();\nlogin.getEmailInput().type('invalid_email');\nlogin.getPasswordInput().type('123');\ncy.get('p.caption.status-danger').should('contain', 'Email should be the real one!');\nlogin.getEmailInput().click();\ncy.get('p.caption.status-danger').should('contain', 'Password should contain from 4 to 50 characters');",
+              "err": {},
+              "uuid": "00de8161-38ff-4532-81d7-0b0d111bdcdb",
+              "parentUUID": "967dc0e9-3336-4e36-ac24-0deafbf070dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User is Logged In",
+              "fullTitle": "Second  Ui suite User is Logged In",
+              "timedOut": null,
+              "duration": 5094,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = new _LoginPage.LoginPage();\nlogin.visitLoginPage();\nlogin.getEmailInput().type('valeriia@google.com');\nlogin.getPasswordInput().type('123456');\nlogin.getLoginButton().click();\ncy.get('div.user-picture.image').should('have.attr', 'style', 'background-image: url(\"assets/images/nick.png\");');",
+              "err": {},
+              "uuid": "b46977cb-1253-4734-b4f8-14724bdb6bc9",
+              "parentUUID": "967dc0e9-3336-4e36-ac24-0deafbf070dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Forgot Password Validation Messages And Back Buttons ",
+              "fullTitle": "Second  Ui suite Forgot Password Validation Messages And Back Buttons ",
+              "timedOut": null,
+              "duration": 1499,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = new _LoginPage.LoginPage();\nlogin.visitLoginPage();\nlogin.getForgotPasswordButton().click();\nlogin.getEmailForgotInput().type('valeriia');\ncy.get('body').click();\ncy.get('p.caption.status-danger:contains(\"Email should be the real one!\")').should('be.visible');\nlogin.getBackToLogin().click();\ncy.get('h1.title#title').should('be.visible').and('contain', 'Login');\nlogin.getForgotPasswordButton().click();\nlogin.getBackToRegister().click();\ncy.get('h1.title#title').should('be.visible').and('contain', 'Register');",
+              "err": {},
+              "uuid": "cdec283c-aef9-469f-a26f-f7cb06205683",
+              "parentUUID": "967dc0e9-3336-4e36-ac24-0deafbf070dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Register Validation Messages ",
+              "fullTitle": "Second  Ui suite Register Validation Messages ",
+              "timedOut": null,
+              "duration": 1759,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const register = new _RegisterPage.RegisterPage();\nregister.visitRegisterPage();\nregister.getFullNameField().type('v');\ncy.get('body').click();\ncy.get('p.caption.status-danger:contains(\"Full name should contains from 4 to 50 characters\")').should('be.visible');\nregister.getEmailAddressField().type('valeriia');\ncy.get('body').click();\ncy.get('p.caption.status-danger:contains(\"Email should be the real one!\")').should('be.visible');\nregister.getPasswordField().type('123');\ncy.get('p.caption.status-danger:contains(\"Password should contain from 4 to 50 characters\")').should('be.visible');\nregister.getRepeatPasswordField().click();\ncy.get('body').click();\ncy.get('p.caption.status-danger:contains(\"Password confirmation is required!\")').should('be.visible');",
+              "err": {},
+              "uuid": "9781c466-f2f6-4c99-9797-63bc47ead34e",
+              "parentUUID": "967dc0e9-3336-4e36-ac24-0deafbf070dd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User is Registered ",
+              "fullTitle": "Second  Ui suite User is Registered ",
+              "timedOut": null,
+              "duration": 5501,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const register = new _RegisterPage.RegisterPage();\nregister.visitRegisterPage();\nregister.getFullNameField().type('Valeriia');\nregister.getEmailAddressField().type('valeriia@gmail.com');\nregister.getPasswordField().type('12345');\nregister.getRepeatPasswordField().type('12345');\ncy.get('span.custom-checkbox').click();\nregister.getRegisterButton().click();\ncy.get('div.user-picture.image').should('have.attr', 'style', 'background-image: url(\"assets/images/nick.png\");');",
+              "err": {},
+              "uuid": "da01d5b6-baa1-4e4c-b8fc-ec8eb6560daa",
+              "parentUUID": "967dc0e9-3336-4e36-ac24-0deafbf070dd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "00de8161-38ff-4532-81d7-0b0d111bdcdb",
+            "b46977cb-1253-4734-b4f8-14724bdb6bc9",
+            "cdec283c-aef9-469f-a26f-f7cb06205683",
+            "9781c466-f2f6-4c99-9797-63bc47ead34e",
+            "da01d5b6-baa1-4e4c-b8fc-ec8eb6560daa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16186,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

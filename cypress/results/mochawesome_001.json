@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-15T21:28:10.424Z",
+    "end": "2023-10-15T21:28:12.476Z",
+    "duration": 2052,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e2df09e8-e934-4604-9bb6-2310f5f81a3f",
+      "title": "",
+      "fullFile": "cypress/e2e/datepickerTest.spec.js",
+      "file": "cypress/e2e/datepickerTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d378a63d-101c-4d02-acb2-e5ad4f8b6246",
+          "title": "DataPicker Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "DataPicker Test",
+              "fullTitle": "DataPicker Suite DataPicker Test",
+              "timedOut": null,
+              "duration": 1990,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const formattedDate = (0, _moment.default)().format('MMM D[,] YYYY');\nconst datapic = new _DatapickerPage.DatapickerPage();\ndatapic.elements.visitDatapickerPage();\ncy.get('[ng-reflect-icon=\"menu-2-outline\"]').click();\ndatapic.elements.getInputField().click();\ndatapic.elements.getTodayButton().click();\ncy.get(\"input[placeholder='Form Picker']\").should('have.value', formattedDate);",
+              "err": {},
+              "uuid": "7ae615a4-095f-4ddc-868e-ecd66540ef81",
+              "parentUUID": "d378a63d-101c-4d02-acb2-e5ad4f8b6246",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7ae615a4-095f-4ddc-868e-ecd66540ef81"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1990,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

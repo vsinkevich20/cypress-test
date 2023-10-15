@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-15T21:28:14.108Z",
+    "end": "2023-10-15T21:28:21.350Z",
+    "duration": 7242,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5d9e8788-fbdd-479b-8cab-615051a34a49",
+      "title": "",
+      "fullFile": "cypress/e2e/firstUiTest.spec.js",
+      "file": "cypress/e2e/firstUiTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "03b75af5-a919-4c4c-8888-d928eb6af8ac",
+          "title": "First  Ui suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Task #1 Verify Color of Themas ",
+              "fullTitle": "First  Ui suite Task #1 Verify Color of Themas ",
+              "timedOut": null,
+              "duration": 3284,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".select-button\").click();\ncy.contains(\" Light\").click();\ncy.get(\"nb-layout-header nav\").should('have.css', 'background-color', 'rgb(255, 255, 255)');\ncy.get(\".select-button\").click();\ncy.contains(\"Dark\").click();\ncy.get(\"nb-layout-header nav\").should('have.css', 'background-color', 'rgb(34, 43, 69)');\ncy.get(\".select-button\").click();\ncy.contains(\"Cosmic\").click();\ncy.get(\"nb-layout-header nav\").should('have.css', 'background-color', 'rgb(50, 50, 89)');\ncy.get(\".select-button\").click();\ncy.contains(\"Corporate\").click();\ncy.get(\"nb-layout-header nav\").should('have.css', 'background-color', 'rgb(255, 255, 255)');",
+              "err": {},
+              "uuid": "244af3ca-cdf7-4b3e-b85e-c4e9de2f2e0a",
+              "parentUUID": "03b75af5-a919-4c4c-8888-d928eb6af8ac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Task #2 Verify Product Details Text",
+              "fullTitle": "First  Ui suite Task #2 Verify Product Details Text",
+              "timedOut": null,
+              "duration": 1177,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[ng-reflect-icon=\"layout-outline\"]').click();\ncy.get('a[title=\"Accordion\"] > span.menu-title').click();\ncy.get('.item-body').should('not.be.visible');\ncy.get('button.appearance-filled').click({\n  force: true\n}).should('not.have.class', 'accordion-item-header-collapsed');\ncy.get('.item-body').should('be.visible').and('contain', 'A nebula is an interstellar cloud of dust, hydrogen, helium and other ionized gases. Originally, nebula was a name for any diffuse astronomical object, including galaxies beyond the Milky Way.');",
+              "err": {},
+              "uuid": "574caf97-625a-485a-b580-989294c51c8d",
+              "parentUUID": "03b75af5-a919-4c4c-8888-d928eb6af8ac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": " Task #3 Verify Popover Text",
+              "fullTitle": "First  Ui suite  Task #3 Verify Popover Text",
+              "timedOut": null,
+              "duration": 1309,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nb-icon.menu-icon.ng-tns-c7-7').click();\ncy.get('a.ng-star-inserted[title=\"Popover\"]').click();\ncy.get('button').contains('Right').trigger('mouseenter');\ncy.get('nb-popover').should('be.visible').contains('Hello, how are you today?');",
+              "err": {},
+              "uuid": "cee07827-4ff4-48e3-8656-05c9067501bf",
+              "parentUUID": "03b75af5-a919-4c4c-8888-d928eb6af8ac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Task #4 Verify Entered Name Value",
+              "fullTitle": "First  Ui suite Task #4 Verify Entered Name Value",
+              "timedOut": null,
+              "duration": 1332,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nb-icon.menu-icon.ng-tns-c7-7').click();\ncy.get('a.ng-tns-c7-8[title=\"Dialog\"]').click();\ncy.get('button:contains(\"Enter Name\")').click();\ncy.get('input[placeholder=\"Name').type('Valeriia');\ncy.get('button.status-success[ng-reflect-status=\"success\"]').click();\ncy.get('li.ng-star-inserted').should('be.visible').and('contain', 'Valeriia');",
+              "err": {},
+              "uuid": "871ef830-e7e5-443e-b56f-a72fd1761f2c",
+              "parentUUID": "03b75af5-a919-4c4c-8888-d928eb6af8ac",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "244af3ca-cdf7-4b3e-b85e-c4e9de2f2e0a",
+            "574caf97-625a-485a-b580-989294c51c8d",
+            "cee07827-4ff4-48e3-8656-05c9067501bf",
+            "871ef830-e7e5-443e-b56f-a72fd1761f2c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7102,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-15T21:28:28.331Z",
+    "end": "2023-10-15T21:28:35.655Z",
+    "duration": 7324,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4a0eaf4f-99c6-4be8-abed-9bfeee6a1b71",
+      "title": "",
+      "fullFile": "cypress/e2e/loginPageTest.spec.js",
+      "file": "cypress/e2e/loginPageTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "556ef8d6-f52e-41d9-843a-5f497c040e5f",
+          "title": "Login Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "LogIn Validation Messages",
+              "fullTitle": "Login Suite LogIn Validation Messages",
+              "timedOut": null,
+              "duration": 2172,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = new _LoginPage.LoginPage();\nlogin.visitLoginPage();\nlogin.getEmailInput().type('invalid_email');\nlogin.getPasswordInput().type('123');\ncy.get('p.caption.status-danger').should('contain', 'Email should be the real one!');\nlogin.getEmailInput().click();\ncy.get('p.caption.status-danger').should('contain', 'Password should contain from 4 to 50 characters');",
+              "err": {},
+              "uuid": "b28df0de-b3d6-4dec-84b0-d469362aaabb",
+              "parentUUID": "556ef8d6-f52e-41d9-843a-5f497c040e5f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User is Logged In",
+              "fullTitle": "Login Suite User is Logged In",
+              "timedOut": null,
+              "duration": 5067,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = new _LoginPage.LoginPage();\nlogin.visitLoginPage();\nlogin.getEmailInput().type('valeriia@google.com');\nlogin.getPasswordInput().type('123456');\nlogin.getLoginButton().click();\ncy.get('div.user-picture.image').should('have.attr', 'style', 'background-image: url(\"assets/images/nick.png\");');",
+              "err": {},
+              "uuid": "218baa7b-cb52-45e5-b174-d0881bebc65d",
+              "parentUUID": "556ef8d6-f52e-41d9-843a-5f497c040e5f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b28df0de-b3d6-4dec-84b0-d469362aaabb",
+            "218baa7b-cb52-45e5-b174-d0881bebc65d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7239,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

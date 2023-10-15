@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-10-15T21:28:22.979Z",
+    "end": "2023-10-15T21:28:26.713Z",
+    "duration": 3734,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f3aebd48-7a6e-423a-beb7-90d38cd1f125",
+      "title": "",
+      "fullFile": "cypress/e2e/forgotPasswordTest.spec.js",
+      "file": "cypress/e2e/forgotPasswordTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "36ecf846-041b-4683-84b8-f44aa848f92c",
+          "title": "Forgot Password Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Forgot Password Validation Messages And Back Buttons ",
+              "fullTitle": "Forgot Password Suite Forgot Password Validation Messages And Back Buttons ",
+              "timedOut": null,
+              "duration": 2351,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = new _LoginPage.LoginPage();\nlogin.visitLoginPage();\nlogin.getForgotPasswordButton().click();\nlogin.getEmailForgotInput().type('valeriia');\ncy.get('body').click();\ncy.get('p.caption.status-danger:contains(\"Email should be the real one!\")').should('be.visible');\nlogin.getBackToLogin().click();\ncy.get('h1.title#title').should('be.visible').and('contain', 'Login');\nlogin.getForgotPasswordButton().click();\nlogin.getBackToRegister().click();\ncy.get('h1.title#title').should('be.visible').and('contain', 'Register');",
+              "err": {},
+              "uuid": "09a85e64-8bc0-4565-8cbe-2e9967241e1c",
+              "parentUUID": "36ecf846-041b-4683-84b8-f44aa848f92c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Back Buttons Flow Test ",
+              "fullTitle": "Forgot Password Suite Back Buttons Flow Test ",
+              "timedOut": null,
+              "duration": 1273,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = new _LoginPage.LoginPage();\nlogin.visitLoginPage();\nlogin.getForgotPasswordButton().click();\nlogin.getBackToLogin().click();\ncy.get('h1.title#title').should('be.visible').and('contain', 'Login');\nlogin.getForgotPasswordButton().click();\nlogin.getBackToRegister().click();\ncy.get('h1.title#title').should('be.visible').and('contain', 'Register');",
+              "err": {},
+              "uuid": "627343cd-9263-4ce7-a883-c2ed017444e2",
+              "parentUUID": "36ecf846-041b-4683-84b8-f44aa848f92c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "09a85e64-8bc0-4565-8cbe-2e9967241e1c",
+            "627343cd-9263-4ce7-a883-c2ed017444e2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3624,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
