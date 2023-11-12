@@ -31,6 +31,7 @@
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
     "clean:reports": "rm -r cypress/results/* || true && rm mochawesome.json || true",
     "test:headless": "npx cypress run --browser chrome",
+    "cypress:e2e": "start-test start http-get://localhost:4200/ cypress:run",
     "generate:report": "npx mochawesome-merge 'cypress/results/*.json' > mochawesome.json",
     "test:full": "npm run clean:reports && npm run test:headless && npm run generate:report",
     "start-test": "start-server-and-test start http-get://localhost:4200/ cypress:run",
