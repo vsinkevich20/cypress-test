@@ -2,11 +2,30 @@ name: My Test WorkFlow
 on: workflow_dispatch
 jobs:
   testing:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
-     - name: Get the project code
-       uses: actions/checkout@v4
-     - name: Install dependencies
-       run: npm install --force
-     - name: Run tests
-       run: npm run test:full
+      - name: Get the project code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Run tests
+        run: npm run test:full
+
+      - name: Generate Reports
+        run: npm run generate:report
+        if: always()
+
+      - name: Save Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          path: mochawesome
+          name: Test Report
+        if: always()
+
+      - name: Get Test Report
+        uses: actions/download-artifact@v2
+        with:
+          name: Test Report
+        if: always()
