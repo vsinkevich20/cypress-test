@@ -20,7 +20,7 @@ jobs:
       - name: Save Test Report
         uses: actions/upload-artifact@v3
         with:
-          path: mochawesome
+          path: mochawesome-report
           name: Test Report
         if: always()
 
