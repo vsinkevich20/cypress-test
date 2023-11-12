@@ -33,7 +33,7 @@ jobs:
         if: always()
 
     testingWindows:
-          runs-on: windows-latest
+          runs-on: ubuntu-latest
           steps:
             - name: Get the project code
               uses: actions/checkout@v4
