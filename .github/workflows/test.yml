@@ -2,7 +2,7 @@ name: My Test WorkFlow
 on: workflow_dispatch
 jobs:
   testing:
-    runs_on: ubuntu_latest
+    runs-on: ubuntu_latest
     steps:
      - name: Get the project code
        uses: actions/checkout@v4
