@@ -1,5 +1,7 @@
+
 name: My Test WorkFlow
 on: workflow_dispatch
+
 jobs:
   testingUbuntu:
     runs-on: ubuntu-latest
@@ -12,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: npm install --force
 
-      - name: Run tests
+      - name: Run tests on Ubuntu
         run: npm run cypress:e2e
 
       - name: Generate Reports
@@ -32,31 +34,31 @@ jobs:
           name: Test Report
         if: always()
 
-    testingWindows:
-          runs-on: windows-latest
-          steps:
-            - name: Get the project code
-              uses: actions/checkout@v4
+  testingWindows:
+    runs-on: windows-latest
+    steps:
+      - name: Get the project code
+        uses: actions/checkout@v4
 
-            - name: Install dependencies
-              run: npm install --force
+      - name: Install dependencies
+        run: npm install --force
 
-            - name: Run tests
-              run: npm run cypress:e2e
+      - name: Run tests on Windows
+        run: npm run cypress:e2e
 
-            - name: Generate Reports
-              run: npm run generate:report
-              if: always()
+      - name: Generate Reports
+        run: npm run generate:report
+        if: always()
 
-            - name: Save Test Report
-              uses: actions/upload-artifact@v3
-              with:
-                path: mochawesome-report
-                name: Test Report
-              if: always()
+      - name: Save Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          path: mochawesome-report
+          name: Test Report
+        if: always()
 
-            - name: Get Test Report
-              uses: actions/download-artifact@v2
-              with:
-                name: Test Report
-              if: always()
+      - name: Get Test Report
+        uses: actions/download-artifact@v2
+        with:
+          name: Test Report
+        if: always()
