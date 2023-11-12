@@ -1,0 +1,12 @@
+name: My Test WorkFlow
+on: workflow_dispatch
+jobs:
+  testing:
+    runs_one: ubuntu_lates
+    steps:
+     - name: Get the project code
+       uses: actions/checkout@v4
+     - name: Install dependencies
+       run: npm install --force
+     - name: Run tests
+       run: npm run test:full
