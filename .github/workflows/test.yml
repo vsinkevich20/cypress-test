@@ -3,6 +3,8 @@ on: workflow_dispatch
 jobs:
   testingUbuntu:
     runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node-20.6.1-firefox-latest
     steps:
       - name: Get the project code
         uses: actions/checkout@v4
