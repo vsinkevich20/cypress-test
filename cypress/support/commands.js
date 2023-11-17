@@ -15,12 +15,24 @@ Cypress.Commands.add('loginByAPI', () => {
 });
 
 Cypress.Commands.add('getCategories', () => {
-  return cy.request({
-    method: 'GET',
-    url: 'http://5.189.186.217/category',
-  }).then(response => {
-    return response.body;
+  cy.request({
+    method: 'POST',
+    url: 'http://5.189.186.217/api/auth/login',
+    body: {
+      email: 'valeria.sinkevich20@gmail.com',
+      password: 'Passer123@',
+    },
+  }).then(loginResponse => {
+    const authToken = loginResponse.body.token;
+    cy.request({
+      method: 'GET',
+      url: 'http://5.189.186.217/api/category',
+      headers: {
+        Authorization: `${authToken}`,
+      },
+    }).then(categoryResponse => {
+      return categoryResponse.body;
+    });
   });
 });
-
 

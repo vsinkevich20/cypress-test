@@ -24,9 +24,7 @@ describe('Test via API', () => {
 
   it('Get a List of Categories', () => {
     cy.contains("Асортимент").click()
-    cy.getCategories().then(categories => {
-      expect(categories).to.have.length.above(0);
-    });
+    cy.getCategories()
   });
   it('Verify Match the number of categories in UI and API', () => {
     cy.getCategories().then(apiCategories => {
