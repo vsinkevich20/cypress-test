@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-11-19T14:14:24.610Z",
+    "end": "2023-11-19T14:14:30.641Z",
+    "duration": 6031,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fe2f2228-5920-449f-9e85-22ca80abf5db",
+      "title": "",
+      "fullFile": "cypress/e2e/test.spec.js",
+      "file": "cypress/e2e/test.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f3fad5a1-472b-4b19-a374-66be147ca043",
+          "title": "Test via API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Overview Visit ",
+              "fullTitle": "Test via API Overview Visit ",
+              "timedOut": null,
+              "duration": 1877,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(\"Огляд\").click();",
+              "err": {},
+              "uuid": "c9ecd074-26fa-43ea-976c-9da3055a2012",
+              "parentUUID": "f3fad5a1-472b-4b19-a374-66be147ca043",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add Category",
+              "fullTitle": "Test via API Add Category",
+              "timedOut": null,
+              "duration": 1902,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(\"Асортимент\").click();\ncy.get('button[routerlink=\"/categories/new\"]').click();\ncy.get('input[formcontrolname=\"name\"].ng-untouched.ng-pristine.ng-invalid').type('Category 1');\ncy.get('button.waves-effect.waves-light.btn[type=\"submit\"]').click();\ncy.contains(\"Асортимент\").click();\ncy.get('button[routerlink=\"/categories/new\"]').click();\ncy.get('input[formcontrolname=\"name\"].ng-untouched.ng-pristine.ng-invalid').type('Category 2');\ncy.get('button.waves-effect.waves-light.btn[type=\"submit\"]').click();",
+              "err": {},
+              "uuid": "602cd548-5654-41d4-963a-87f5db6ad8b5",
+              "parentUUID": "f3fad5a1-472b-4b19-a374-66be147ca043",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get a List of Categories",
+              "fullTitle": "Test via API Get a List of Categories",
+              "timedOut": null,
+              "duration": 1007,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains(\"Асортимент\").click();\ncy.getCategories();",
+              "err": {},
+              "uuid": "c9c5bc9c-0abf-498d-917e-dfc1242c9ef8",
+              "parentUUID": "f3fad5a1-472b-4b19-a374-66be147ca043",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Match the number of categories in UI and API",
+              "fullTitle": "Test via API Verify Match the number of categories in UI and API",
+              "timedOut": null,
+              "duration": 1109,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getCategories().then(apiCategories => {\n  cy.contains('Асортимент').click();\n  cy.get('.collection a.collection-item').should('have.length', apiCategories.length).then(uiCategories => {\n    expect(uiCategories.length).to.equal(apiCategories.length);\n  });\n});",
+              "err": {},
+              "uuid": "2e612c14-8176-41b2-9fc5-c17b82aa1a58",
+              "parentUUID": "f3fad5a1-472b-4b19-a374-66be147ca043",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c9ecd074-26fa-43ea-976c-9da3055a2012",
+            "602cd548-5654-41d4-963a-87f5db6ad8b5",
+            "c9c5bc9c-0abf-498d-917e-dfc1242c9ef8",
+            "2e612c14-8176-41b2-9fc5-c17b82aa1a58"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5895,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

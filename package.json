@@ -35,7 +35,9 @@
     "generate:report": "npx mochawesome-merge 'cypress/results/*.json' > mochawesome.json",
     "test:full": "npm run clean:reports && npm run test:headless && npm run generate:report",
     "start-test": "start-server-and-test start http-get://localhost:4200/ cypress:run",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "cy:run": "npx cypress run --env email=valeria.sinkevich20@gmail.com,password=Passer123@ --config baseUrl=http://5.189.186.217/",
+    "cy:run1": "npx cypress run --env email=valeria.sinkevich20@gmail.com,password=Passer123@ --config baseUrl=http://5.189.186.217/ --spec cypress/e2e/test.spec.js"
   },
   "dependencies": {
     "@agm/core": "^1.1.0",
@@ -62,6 +64,7 @@
     "ckeditor": "4.7.3",
     "classlist.js": "1.1.20150312",
     "core-js": "2.5.1",
+    "cypress-mongodb": "^6.2.0",
     "echarts": "^4.0.2",
     "eva-icons": "^1.1.0",
     "intl": "1.2.5",
