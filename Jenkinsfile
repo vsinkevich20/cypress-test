@@ -12,8 +12,7 @@ pipeline {
     stages {
         stage("Init dependencies") {
             steps {
-                sh 'npm i --force'
-                sh 'sudo chown -R 110:115 "/.npm"'
+                sh 'npm i'
             }
         }
 
