@@ -27,6 +27,13 @@ pipeline {
     }
 
     post {
-        cleanWs()
+        always {
+            sh "npm run cy:run2"
+        }
+        success {
+            script {
+                cleanWs()
+            }
+        }
     }
 }
