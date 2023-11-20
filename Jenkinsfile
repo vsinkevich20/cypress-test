@@ -24,7 +24,7 @@ pipeline{
 
             steps {
 
-                sh 'npm i --force'
+                sh 'npm i'
 
             }
 
